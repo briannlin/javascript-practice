@@ -7,7 +7,26 @@
  * @example [3,2,3] -> 3
 */
 function problem(numbers) {
-    return null;
+    majority_bound = Math.floor(numbers.length / 2);
+    freq = {};
+    for (i = 0; i < numbers.length; i++)
+    {
+        num = numbers[i];
+        if (freq[num])
+        {
+            freq[num] += 1;
+        }
+        else
+        {
+            freq[num] = 1;
+        }
+        
+        if (freq[num] == majority_bound)
+        {
+            return num;
+        }
+    } 
+    return majority_bound;
 }
 
 const tests = [
